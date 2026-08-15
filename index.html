@@ -166,6 +166,25 @@ nav#main-nav a:hover{background:var(--surface-2); color:var(--blue);}
     linear-gradient(180deg, #F3FAFE 0%, #FFFFFF 72%);
   padding:76px 0 40px;
 }
+.hero-photo-wrap{
+  position:relative; border-radius:28px; overflow:hidden; box-shadow:var(--shadow-lg);
+  aspect-ratio:4/4.6; max-height:560px;
+}
+.hero-photo{width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block;}
+.hero-photo-tint{
+  position:absolute; inset:0;
+  background:linear-gradient(190deg, rgba(0,121,193,0.28) 0%, rgba(0,121,193,0.02) 45%, rgba(11,42,64,0.55) 100%);
+  mix-blend-mode:multiply;
+}
+.hero-photo-badge{
+  position:absolute; left:22px; bottom:22px; background:#fff; border:1px solid var(--border); border-radius:100px;
+  padding:9px 16px; display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--green-dark);
+  box-shadow:var(--shadow-md); z-index:2;
+}
+@media(max-width:980px){.hero-photo-wrap{aspect-ratio:16/10; max-height:380px;}}
+.banner-grid{grid-template-columns:1fr; text-align:center;}
+.banner-grid .hero-badge, .banner-grid .meta-row, .banner-grid .hero-actions{justify-content:center;}
+.banner-grid .sub{margin-left:auto; margin-right:auto;}
 .orbit-deco{position:absolute; top:-140px; right:-140px; width:520px; height:520px; border-radius:50%; border:1.5px dashed rgba(0,121,193,0.18); pointer-events:none;}
 .orbit-deco::before{content:"";position:absolute;inset:60px;border-radius:50%;border:1.5px dashed rgba(85,188,235,0.28);}
 .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;}
@@ -596,48 +615,40 @@ footer{background:var(--ink); color:#CBDCE7; padding:64px 0 28px;}
 <!-- =========================================================
      HERO
      ========================================================= -->
-<section class="hero" id="home">
+<section class="hero banner-hero" id="home">
   <div class="orbit-deco"></div>
   <div class="wrap hero-grid">
     <div class="reveal in">
       <div class="hero-badge"><span class="dot">360</span> DHP Accredited · Global Webinar Series</div>
-      <div class="hero-eyebrow-line">Global Webinar Series #8 — August 2026</div>
-      <h1>Scaling Virtual <span class="accent">Geriatric Care</span> Globally</h1>
-      <p class="sub">Lessons from Seha Virtual Hospital for Healthy Ageing, Integrated Care and Hospital at Home — presented as part of Qatar's Ageing &amp; Geriatrics Excellence global learning platform.</p>
+      <div class="hero-eyebrow-line">Qatar's Ageing &amp; Geriatrics Excellence</div>
+      <h1>Championing <span class="accent">Functional Longevity</span> &amp; Healthy Ageing</h1>
+      <p class="sub">Q-AGE 360 is a global webinar and knowledge community advancing functional longevity, geroscience and geriatric rehabilitation — connecting experts, clinicians and innovators across borders, every month.</p>
       <div class="meta-row">
         <div class="meta-pill">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
-          Saturday, 15 August 2026
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Functional Longevity
         </div>
         <div class="meta-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          9:00 – 10:00 AM (Qatar Time)
+          Monthly Global Sessions
         </div>
         <div class="meta-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-          1 CPD Point · Category 1
+          CPD Accredited
         </div>
       </div>
       <div class="hero-actions">
-        <a href="https://forms.office.com/r/Me17aKiCDp?origin=lprLink" target="_blank" rel="noopener" class="btn btn-primary">Register for Webinar</a>
+        <a href="https://forms.office.com/r/Me17aKiCDp?origin=lprLink" target="_blank" rel="noopener" class="btn btn-primary">Register Now</a>
         <a href="#community" class="btn btn-outline">Join the Community</a>
       </div>
     </div>
 
-    <div class="hero-card reveal in">
-      <div class="series-no">Global Webinar Series #8</div>
-      <h3>Scaling Virtual Geriatric Care Globally</h3>
-      <p class="topic-sub">Lessons from Seha Virtual Hospital for Healthy Ageing, Integrated Care and Hospital at Home</p>
-      <div class="divider"></div>
-      <div class="hc-row"><span class="label">Date</span><span class="val">15 Aug 2026</span></div>
-      <div class="hc-row"><span class="label">Time</span><span class="val">9:00–10:00 AM QT</span></div>
-      <div class="hc-row"><span class="label">CPD</span><span class="val">HGI-02-PHY-P692</span></div>
-      <div class="speaker-strip">
-        <div class="avatar-ring">MK</div>
-        <div>
-          <div class="nm">Dr. Mohammed Khusheim</div>
-          <div class="rl">Guest Speaker · Ministry of Health, KSA</div>
-        </div>
+    <div class="hero-photo-wrap reveal in">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1742841551724-2620db58e1c6?fm=jpg&amp;q=80&amp;w=1400&amp;auto=format&amp;fit=crop" alt="An elderly couple walking together in a park, representing healthy ageing and functional longevity" loading="eager">
+      <div class="hero-photo-tint"></div>
+      <div class="hero-photo-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        Functional Longevity
       </div>
     </div>
   </div>
@@ -657,50 +668,114 @@ footer{background:var(--ink); color:#CBDCE7; padding:64px 0 28px;}
      ========================================================= -->
 <section class="section-pad" id="about">
   <div class="wrap">
-    <div class="two-col">
-      <div class="reveal">
-        <div class="eyebrow">About Q-AGE 360</div>
-        <h2 style="font-size:clamp(26px,3.2vw,36px); font-weight:800; letter-spacing:-0.02em; max-width:520px;">A global platform for healthy ageing, geroscience &amp; geriatric rehabilitation</h2>
-        <div class="quote-block mt-8" style="margin-top:22px;">
+    <div class="section-head reveal" style="max-width:760px;">
+      <div class="eyebrow">About Q-AGE 360</div>
+      <h2 style="font-size:clamp(26px,3.2vw,36px); font-weight:800; letter-spacing:-0.02em;">A global platform for healthy ageing, functional longevity &amp; geriatric rehabilitation</h2>
+    </div>
+
+    <div class="two-col reveal" style="align-items:flex-start;">
+      <div>
+        <div class="quote-block">
           The world is ageing rapidly. Healthy ageing, geroscience, and geriatric rehabilitation are no longer optional—they define the future of healthcare.
           <br><br>
           Q-AGE 360 is an open platform dedicated to sharing expert knowledge, driving innovation, and promoting integrated care across borders.
         </div>
-        <ul class="check-list">
+        <p style="margin-top:20px; font-size:15px; color:var(--ink-soft); line-height:1.75;">
+          <strong style="color:var(--ink);">Healthy ageing</strong> is the process of maintaining physical, mental and social wellbeing as we grow older — preventing disease, preserving independence and sustaining quality of life. At its core is <strong style="color:var(--ink);">functional longevity</strong>: extending not just lifespan, but the number of years lived with strength, mobility, cognitive clarity and the ability to perform everyday activities without assistance.
+        </p>
+        <p style="margin-top:12px; font-size:15px; color:var(--ink-soft); line-height:1.75;">
+          Q-AGE 360 places this focus at the centre of its programming — geroscience, rehabilitation, integrated and virtual care models, and evidence-based strategies that help older adults live longer, healthier and more functionally independent lives.
+        </p>
+      </div>
+      <div>
+        <ul class="check-list" style="margin-top:0;">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Brings together healthcare professionals, geriatric specialists and rehabilitation experts</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Connects researchers, academics and international healthcare leaders</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Facilitates global knowledge sharing, best-practice exchange and continuous professional development</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Champions functional longevity — helping older adults stay mobile, independent and engaged for longer</li>
         </ul>
         <div class="positioning-card">
           <span class="mark">&ldquo;</span>
-          <p>Q-AGE 360 is a global knowledge and expert community dedicated to advancing healthy ageing, geriatric care and rehabilitation through international collaboration, expert-led webinars, knowledge sharing and continuous engagement.</p>
+          <p>Q-AGE 360 is a global knowledge and expert community dedicated to advancing healthy ageing, functional longevity, geriatric care and rehabilitation through international collaboration, expert-led webinars, knowledge sharing and continuous engagement.</p>
           <div class="attrib">Proposed positioning statement · Not an official quotation</div>
         </div>
       </div>
+    </div>
 
-      <div class="reveal">
-        <div class="benefit-grid" style="grid-template-columns:1fr 1fr; margin-top:0;">
-          <div class="benefit-card">
-            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M2 12h20M12 2c2.5 2.7 4 6.2 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.2-4-10s1.5-7.3 4-10z"/></svg></div>
-            <h4>Global Knowledge Sharing</h4>
-            <p>Expert-led sessions connecting practitioners across regions.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <h4>International Collaboration</h4>
-            <p>A shared space for cross-border partnerships in ageing care.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55BCEB" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
-            <h4>Expert-Led Learning</h4>
-            <p>Monthly sessions led by leading regional and global specialists.</p>
-          </div>
-          <div class="benefit-card">
-            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
-            <h4>Innovation in Care</h4>
-            <p>Showcasing integrated, virtual and community-based care models.</p>
-          </div>
+    <!-- Series Leadership: Prof. Hanadi Al Hamad — appears immediately after the intro -->
+    <div class="section-head center reveal" style="margin-top:64px;">
+      <div class="eyebrow" style="justify-content:center;">Series Leadership</div>
+      <h2>Championing Functional Longevity &amp; Healthy Ageing</h2>
+    </div>
+
+    <div class="leader-spotlight reveal">
+      <div class="ph-avatar">HA</div>
+      <div>
+        <div class="role-tag">Series Lead &amp; Executive Sponsor</div>
+        <h3>Prof. Hanadi Al Hamad</h3>
+        <div class="org">Deputy Chief Medical Officer, HMC</div>
+        <p class="bio" style="margin-top:10px;">A global leader in Healthy Ageing and Rehabilitation. Prof. Hanadi Al Hamad provides the executive vision and clinical leadership behind Q-AGE 360, driving its focus on functional longevity, geroscience and integrated geriatric care — with the organising committee operating under her direction.</p>
+        <ul class="contrib-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Sets the strategic vision positioning Q-AGE 360 around functional longevity and healthy ageing</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Oversees selection of monthly topics and international guest speakers advancing this focus</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Leads the organising committee, guiding the team responsible for planning and delivery</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Champions Q-AGE 360's mission to advance functional longevity and geriatric excellence across Qatar and the region</li>
+        </ul>
+        <a href="#" class="btn btn-ghost-light btn-sm" style="margin-top:20px;">View Profile</a>
+      </div>
+    </div>
+
+    <div class="committee-note reveal">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      Organising Committee — operating under the leadership of Prof. Hanadi Al Hamad
+    </div>
+
+    <div class="profile-grid reveal">
+      <div class="profile-card">
+        <div class="ph-avatar lead">AM</div>
+        <div>
+          <div class="role-tag">Organiser</div>
+          <h3>Dr. Ajimsha M.S.</h3>
+          <div class="org">Director of Rehabilitation, HMC</div>
+          <p class="bio">Coordinates the planning and clinical programming of the Q-AGE 360 Global Webinar Series, working under the leadership of Prof. Hanadi Al Hamad, with a focus on rehabilitation approaches that support functional longevity and independence in older adults.</p>
         </div>
+      </div>
+      <div class="profile-card">
+        <div class="ph-avatar lead" style="background:linear-gradient(135deg,var(--green),var(--sky));">SA</div>
+        <div>
+          <div class="role-tag">Organiser</div>
+          <h3>Mr. Suneer Ameer</h3>
+          <div class="org">Physiotherapist, HMC</div>
+          <p class="bio">Supports the organisation and coordination of the Q-AGE 360 Global Webinar Series, working under the leadership of Prof. Hanadi Al Hamad, contributing physiotherapy and functional-movement expertise to the series' healthy ageing focus.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Q-AGE 360 offers -->
+    <div class="section-head center reveal" style="margin-top:64px;">
+      <div class="eyebrow" style="justify-content:center;">What the Platform Offers</div>
+      <h2>A Growing Global Community</h2>
+    </div>
+    <div class="benefit-grid reveal">
+      <div class="benefit-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M2 12h20M12 2c2.5 2.7 4 6.2 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.2-4-10s1.5-7.3 4-10z"/></svg></div>
+        <h4>Global Knowledge Sharing</h4>
+        <p>Expert-led sessions connecting practitioners across regions.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h4>International Collaboration</h4>
+        <p>A shared space for cross-border partnerships in ageing care.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55BCEB" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+        <h4>Expert-Led Learning</h4>
+        <p>Monthly sessions led by leading regional and global specialists.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h4>Innovation in Care</h4>
+        <p>Showcasing integrated, virtual and community-based care models.</p>
       </div>
     </div>
   </div>
@@ -766,6 +841,14 @@ footer{background:var(--ink); color:#CBDCE7; padding:64px 0 28px;}
         </div>
       </div>
       <div class="feat-side">
+        <h4>Series Lead</h4>
+        <div style="position:relative; display:flex; gap:14px; align-items:center; margin-bottom:20px;">
+          <div class="avatar-ring" style="width:56px;height:56px;font-size:18px; background:linear-gradient(135deg,#fff,var(--sky));">HA</div>
+          <div>
+            <div style="font-weight:800; font-size:16px;">Prof. Hanadi Al Hamad</div>
+            <div style="font-size:12.5px; opacity:.85;">Deputy Chief Medical Officer, HMC</div>
+          </div>
+        </div>
         <h4>Guest Speaker</h4>
         <div style="position:relative; display:flex; gap:14px; align-items:center; margin-bottom:24px;">
           <div class="avatar-ring" style="width:56px;height:56px;font-size:18px;">MK</div>
@@ -820,57 +903,9 @@ footer{background:var(--ink); color:#CBDCE7; padding:64px 0 28px;}
 <section class="section-pad" id="speakers">
   <div class="wrap">
     <div class="section-head center reveal">
-      <div class="eyebrow" style="justify-content:center;">Series Leadership</div>
-      <h2>Led by Global Experts in Healthy Ageing</h2>
-    </div>
-
-    <!-- Leadership spotlight: Prof. Hanadi Al Hamad -->
-    <div class="leader-spotlight reveal">
-      <div class="ph-avatar">HA</div>
-      <div>
-        <div class="role-tag">Series Lead &amp; Executive Sponsor</div>
-        <h3>Prof. Hanadi Al Hamad</h3>
-        <div class="org">Deputy Chief Medical Officer, HMC</div>
-        <p class="bio" style="margin-top:10px;">A global leader in Healthy Ageing and Rehabilitation. Prof. Hanadi Al Hamad provides the executive vision and clinical leadership behind the Q-AGE 360 Global Webinar Series, with the organising committee operating under her direction.</p>
-        <ul class="contrib-list">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Sets the strategic vision and clinical direction for the Q-AGE 360 series</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Oversees selection of monthly topics and international guest speakers</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Leads the organising committee, guiding the team responsible for planning and delivery</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8AC75A" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Champions Q-AGE 360's mission to advance healthy ageing and geriatric excellence across Qatar and the region</li>
-        </ul>
-        <a href="#" class="btn btn-ghost-light btn-sm" style="margin-top:20px;">View Profile</a>
-      </div>
-    </div>
-
-    <div class="committee-note reveal">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0079C1" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      Organising Committee — operating under the leadership of Prof. Hanadi Al Hamad
-    </div>
-
-    <div class="profile-grid reveal">
-      <div class="profile-card">
-        <div class="ph-avatar lead">AM</div>
-        <div>
-          <div class="role-tag">Organiser</div>
-          <h3>Dr. Ajimsha M.S.</h3>
-          <div class="org">Director of Rehabilitation, HMC</div>
-          <p class="bio">Coordinates the planning and clinical programming of the Q-AGE 360 Global Webinar Series, working under the leadership of Prof. Hanadi Al Hamad.</p>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="ph-avatar lead" style="background:linear-gradient(135deg,var(--green),var(--sky));">SA</div>
-        <div>
-          <div class="role-tag">Organiser</div>
-          <h3>Mr. Suneer Ameer</h3>
-          <div class="org">Physiotherapist, HMC</div>
-          <p class="bio">Supports the organisation and coordination of the Q-AGE 360 Global Webinar Series, working under the leadership of Prof. Hanadi Al Hamad.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-head center reveal" style="margin-top:56px;">
       <div class="eyebrow" style="justify-content:center;">This Month's Guest Speaker</div>
-      <h2 style="font-size:clamp(24px,3vw,32px);">August Webinar #8</h2>
+      <h2>August Webinar #8 — Guest Speaker</h2>
+      <p class="desc">See the "About Q-AGE 360" section above for Series Leadership and the Organising Committee.</p>
     </div>
     <div class="profile-grid reveal" style="grid-template-columns:1fr; max-width:640px; margin:0 auto;">
       <div class="profile-card">
